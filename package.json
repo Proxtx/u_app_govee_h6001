@@ -1,0 +1,20 @@
+{
+  "name": "u_app_govee_h6001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proxtx/u_app_govee_h6001.git"
+  },
+  "author": "Proxtx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Proxtx/u_app_govee_h6001/issues"
+  },
+  "homepage": "https://github.com/Proxtx/u_app_govee_h6001#readme"
+}

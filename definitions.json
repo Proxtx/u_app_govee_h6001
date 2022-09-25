@@ -1,0 +1,38 @@
+{
+  "methods": {
+    "changeColor": {
+      "arguments": [
+        {
+          "name": "Color",
+          "type": "color",
+          "format": "hex"
+        }
+      ],
+      "name": "Change Color"
+    },
+    "turnOn": {
+      "arguments": [],
+      "name": "Turn On"
+    },
+    "turnOff": {
+      "arguments": [],
+      "name": "Turn Off"
+    },
+    "party": {
+      "name": "Party",
+      "arguments": [
+        {
+          "name": "Color Switches",
+          "type": "number",
+          "placeholder": "Number",
+          "value": 50
+        }
+      ]
+    },
+    "isOn": {
+      "name": "Lamp status",
+      "arguments": [],
+      "autoRun": true
+    }
+  }
+}
