@@ -69,7 +69,7 @@ export class App {
     let result = await this.writeToClient([uuid, write]);
 
     if (result) return result;
-    this.on = true;
+    this.on = false;
   }
 
   async findClient() {
