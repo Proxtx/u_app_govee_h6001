@@ -98,8 +98,14 @@ export class App {
   async writeToClient(write) {
     if (!this.client) await this.findClient();
     if (!this.client) return "Can't find client in reach of device.";
-    await this.client.request("ble", "disconnect", []);
-    await this.client.request("ble", "connect", [this.config.address]);
+    let connect = await this.client.request("ble", "connect", [
+      this.config.address,
+    ]);
+    if (!connect) {
+      await this.client.request("ble", "disconnect", []);
+      this.client = undefined;
+      return await this.writeToClient(write);
+    }
     await this.client.request("ble", "discover_services", []);
     this.client.request("ble", "connect", [this.config.address]);
     let writeResult = await this.client.request("ble", "write_to_uuid", write);
