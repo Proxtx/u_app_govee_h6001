@@ -76,6 +76,8 @@ export class App {
     await refreshClients();
     for (let clientName in clients) {
       let client = clients[clientName];
+      let services = (await client.request("core", "services", [])).result;
+      if (!services.includes("ble")) continue;
       await client.request("ble", "start_scan", []);
       if (await this.confirmClient(client)) break;
       await new Promise((r) => setTimeout(r, 20000));
