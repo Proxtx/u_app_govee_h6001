@@ -29,6 +29,17 @@
         }
       ]
     },
+    "changeBrightness": {
+      "name": "Brightness",
+      "arguments": [
+        {
+          "name": "Brightness",
+          "type": "number",
+          "placeholder": "0-100",
+          "value": 100
+        }
+      ]
+    },
     "isOn": {
       "name": "Lamp status",
       "arguments": [],

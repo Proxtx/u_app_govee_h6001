@@ -72,6 +72,38 @@ export class App {
     this.on = false;
   }
 
+  async changeBrightness(brightness) {
+    brightness = (brightness / 100) * 255;
+    if (brightness > 255) brightness = 255;
+    if (brightness < 0) brightness = 0;
+    let write = [
+      0x33,
+      0x04,
+      brightness,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+    ];
+
+    write.push(xor(write));
+    let result = await this.writeToClient([uuid, write]);
+
+    if (result) return result;
+  }
+
   async findClient() {
     await refreshClients();
     for (let clientName in clients) {
