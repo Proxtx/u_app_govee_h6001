@@ -119,6 +119,7 @@ export class App {
 
   async confirmClient(client) {
     let peripherals = (await client.request("ble", "peripherals", [])).result;
+    if(!peripherals) return;
     for (let peripheral of peripherals) {
       if (peripheral.address == this.config.address) {
         this.client = client;
